@@ -29,29 +29,20 @@ public class LoginController {
 		return "register";
 	}
 
-	@PostMapping("/update")
+	@PostMapping("/SignIn")
 	public String index(@RequestParam String username, String password) {
 		System.out.println(username + "" + password);
-		username="Demo";
-		password="8765";
-		if(username=="Demo" && password=="8765") {
+		if (username.equals("Demo") && password.equals("8765")) {
 			return "redirect:index";
-		}else {
-			return "redirect:lo";
+		} else {
+			return "redirect:login";
 		}
-		//return null;
 	}
-	
+
 	@GetMapping("/index")
 	public String index() {
 		System.out.println("ok");
 		return "index";
-	}
-	
-	@GetMapping("/lo")
-	public String lo() {
-		System.out.println("not ok");
-		return "Login";
 	}
 
 }
