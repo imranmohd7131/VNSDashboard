@@ -36,14 +36,22 @@ public class LoginController {
 		password="8765";
 		if(username=="Demo" && password=="8765") {
 			return "redirect:index";
+		}else {
+			return "redirect:lo";
 		}
-		return "redirect:Login";
+		//return null;
 	}
 	
 	@GetMapping("/index")
 	public String index() {
-		
+		System.out.println("ok");
 		return "index";
+	}
+	
+	@GetMapping("/lo")
+	public String lo() {
+		System.out.println("not ok");
+		return "Login";
 	}
 
 }
