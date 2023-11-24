@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>VNS</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="views/agentLogin.css">-->
+	<style>
+		body {
+			background: #d2d6de;
+		}
+
+		a:link {
+			text-decoration: none;
+			width: 150px;
+		}
+
+		.login-box {
+			width: 340px;
+			margin: 2% auto;
+		}
+
+		.logo {
+			margin-top: 50px;
+		}
+
+		.logo {
+			font-size: 35px;
+			text-align: center;
+			margin-bottom: 25px;
+			font-weight: 300;
+		}
+
+		.login-box-body {
+			background: #fff;
+			padding: 20px;
+			border-top: 0;
+			color: #666;
+		}
+
+		.login-box-msg {
+
+			text-align: center;
+			padding: 0 20px 20px 20px;
+			font-size: 20px;
+			color: #0073b7;
+		}
+
+		.btn-forgot {
+			color: #fff;
+			background-color: #f0ad4e;
+			border-color: #eea236;
+		}
+
+		.mail {
+			position: relative;
+		}
+
+		.form-control-feedback {
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 2;
+			display: block;
+			width: 34px;
+			height: 34px;
+			line-height: 34px;
+			text-align: center;
+			pointer-events: none;
+		}
+
+		.bg-olive-active {
+			background-color: #368763 !important;
+		}
+
+		.btn {
+			color: #fff !important;
+		}
+
+		.col-md-12 {
+			font-size: 14px;
+		}
+
+		.col-xs-4 {
+			width: 33.33333333%;
+		}
+
+		.footer {
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="login-box">
+			<div class="logo">
+				<div class="form-group text-center">
+					<a href="" class="db">
+						<img src="/views/logo.png" style="height:1%;width:150px" alt="VNS Ai">
+					</a>
+				</div>
+			</div>
+			<div class="login-box-body">
+				<p class="login-box-msg">
+					Agent Sign in
+
+				</p>
+
+				<form id="LoginForm" name="LoginForm" action="" method="post" novalidate="novalidate">
+					<div class="form-group mail">
+						<input tabindex="1" type="text" maxlength="15" name="username" id="username"
+							class="form-control" placeholder="Your E-mail">
+						<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					</div>
+
+					<div class="form-group has-feedback">
+						<input tabindex="2" type="password" name="password" id="password" class="form-control"
+							placeholder="Your Password">
+						<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					</div>
+					<div class="row">
+						<div class="col-xs-4">
+							<button tabindex="4" id="btn-progress" type="submit" class="btn btn-primary btn-flat"><i
+									class="fa fa-send"></i> Sign In</button>
+						</div>
+					</div>
+				</form>
+				<br><br>
+				<div class="row margt50">
+					<a href="/forgot" class="btn btn-flat btn-forgot">I forgot my password <i
+							class="fa fa-chevron-circle-right"></i></a>
+				</div>
+				<a href="#">Terms and Conditions</a>
+				<br>
+				<a href="#">Privacy Policy</a>
+				<br>
+				<div class="footer">
+					<br><br>
+					<p>
+						Address: Plot 10, Netsmartz House, Chandigarh IT Park, Chandigarh - 160101</p>
+
+					<p>
+						Phone:+91 81460 10600
+					</p>
+					<p>
+						Email:Vnsai@virtuosonetsoft.Com
+					</p>
+				</div>
+
+
+			</div>
+
+		</div>
+		</div>
+		</div>
+	</main>
+
+
+</body>
+
+</html>

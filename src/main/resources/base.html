@@ -1,0 +1,513 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<meta name="copyright" content="Copyright 2023" />
+	<title>Dashboard - VNS Ai</title>
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+	<link rel="stylesheet" href="{% static 'css/footable.bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/css-chart.css' %}">
+	<link rel="stylesheet" href="{% static 'css/daterangepicker.css' %}">
+	<link rel="stylesheet" href="{% static 'css/AdminLTE.css' %}">
+	<link rel="stylesheet" href="{% static 'css/sgcCommonCss.css' %}">
+	<link rel="stylesheet" href="{% static 'css/skin-black.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/pace.min.css' %}">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+	<link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+</head>
+
+<body class="hold-transition skin-black sidebar-mini">
+	<script>var sgc_site_name = "VIRTUOSO NETSOFT";</script>
+	<div class="wrapper">
+		<header class="main-header">
+			<a href="{% url 'dashboard'%}" class="logo" title="VIRTUOSO NETSOFT">
+				<span class="logo-mini">MENU</span>
+				<img style="margin-bottom:4px;max-height:46px;max-width:198px" src="{% static 'img/logo.png' %}"
+					alt="VNS Ai" />
+			</a>
+			<nav class="navbar navbar-static-top" style="background-color: #111;">
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+
+						<li class="dropdown tasks-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-battery"></i>
+								<span class="label label-danger">0.0000</span>
+							</a>
+							<ul class="dropdown-menu">
+								<li class="header"><i class="fa fa-balance-scale"></i> {youhave} INR
+									<strong>0.0000</strong> {balanceamount}
+								</li>
+							</ul>
+						</li>
+						<li id="usertopbarnotifyid" class="dropdown notifications-menu"><a href="#"
+								class="dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-bell-o"></i>
+								<span class="label label-primary">0</span>
+							</a></li>
+						<li id="usertopbarnotifyid" class="dropdown notifications-menu"></li>
+						<li class="dropdown user user-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								<img src="{%static 'img/avatar.png' %}" class="user-image" alt="demo1">
+								<span class="hidden-xs">demo1</span>
+							</a>
+							<ul class="dropdown-menu">
+								<li class="user-header">
+									<img src="{%static 'img/avatar.png' %}" class="img-circle" alt="demo1">
+									<p>
+										Demo VNS <small>demo1 - Member since Oct 2023</small>
+									</p>
+								</li>
+								<li class="user-body">
+									<div class="col-md-6 text-center">
+										<a href="{% url 'dashboard' %}" target="">View Front Site</a>
+									</div>
+									<div class="col-md-6 text-center">
+										<a href="{% url 'security'%}">Change Password</a>
+									</div>
+								</li>
+								<li class="user-footer" style="background-color: #B8BABA;">
+									<div class="pull-left">
+										<a href="/user/profile/" class="btn btn-success btn-flat"><i
+												class="fa fa-user"></i> Profile</a>
+									</div>
+									<div class="pull-right">
+										<a href="/logout/" class="btn btn-danger btn-flat"><i
+												class="fa fa-sign-out"></i> Sign out</a>
+									</div>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</header>
+		<aside class="main-sidebar">
+			<section class="sidebar">
+				<div class="user-panel">
+					<div class="pull-left image">
+						<img src="{%static 'img/avatar.png' %}" class="img-circle" alt="demo1">
+					</div>
+					<div class="pull-left info">
+						<p>demo1</p>
+						<a href="/user/profile/"><i class="fa fa-circle text-success"></i>
+							Online</a>
+					</div>
+				</div>
+				<ul class="sidebar-menu" data-widget="tree">
+
+
+					<li class=" active"><a href="{% url 'dashboard' %}"><i class="fa fa-dashboard"></i>
+							<span>Dashboard</span></a></li>
+					<li class="treeview"><a href="#"><i class="fa fa-user"></i> <span>Profile</span><span
+								class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+						<ul class="treeview-menu">
+							<li class=""><a href=" {% url 'security' %}"><i class="fa fa-angle-double-right"></i>
+									<span>Security</span></a></li>
+							<li class=""><a href="{% url 'edit_profile' %}"><i class="fa fa-angle-double-right"></i>
+									<span>Edit Profile</span></a></li>
+							<li class=""><a href="{% url 'rate_plan' %}"><i class="fa fa-angle-double-right"></i>
+									<span>Rate Plan</span></a></li>
+							<li class=""><a href="{%  url 'notification_settings' %}"><i
+										class="fa fa-angle-double-right"></i> <span>Notification Settings</span></a>
+							</li>
+							<li class=""><a href="/user/apiKey/?action=manage"><i class="fa fa-angle-double-right"></i>
+									<span>API Key</span></a></li>
+							<li class=""><a href="/user/creditHistory/?action=manage"><i
+										class="fa fa-angle-double-right"></i> <span>Credit History</span></a></li>
+							<li class=""><a href="/user/docs_manager/?action=manage"><i class="fa fa-file"></i>
+									<span>Docs Manager</span></a></li>
+							<li class=""><a href="/user/logout/"><i class="fa fa-angle-double-right"></i> <span>Sign
+										out</span></a></li>
+						</ul>
+					</li>
+					<li class="treeview"><a href="#"><i class="fa fa-comment"></i> <span>SMS</span><span
+								class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+						<ul class="treeview-menu">
+							<li class="treeview"><a href="#"><i class="fa fa-envelope"></i> <span>Compose
+										SMS</span><span class="pull-right-container"><i
+											class="fa fa-angle-left pull-right"></i></span></a>
+								<ul class="treeview-menu">
+									<li class=""><a href="/user/sendSMS/?action=quick"><i
+												class="fa fa-angle-double-right"></i> <span>Quick SMS</span></a></li>
+									<li class=""><a href="/user/sendSMS/?action=group"><i
+												class="fa fa-angle-double-right"></i> <span>Group SMS</span></a></li>
+									<li class=""><a href="/user/sendSMS/?action=fileMobile"><i
+												class="fa fa-angle-double-right"></i> <span>File Upload only
+												Mobile</span></a></li>
+									<li class=""><a href="/user/sendSMS/?action=fileMessage"><i
+												class="fa fa-angle-double-right"></i> <span>File Upload with
+												Message</span></a></li>
+									<li class=""><a href="/user/sendSMS/?action=fileCustom"><i
+												class="fa fa-angle-double-right"></i> <span>File Upload
+												Custom</span></a></li>
+								</ul>
+							</li>
+							<li class="treeview"><a href="#"><i class="far fa fa-clock nav-icon"></i> <span>SMS
+										Schedule</span><span class="pull-right-container"><i
+											class="fa fa-angle-left pull-right"></i></span></a>
+								<ul class="treeview-menu">
+									<li class=""><a href="/user/schedule/?action=manage"><i
+												class="fa fa-angle-double-right"></i> <span>Scheduled SMS</span></a>
+									</li>
+									<li class=""><a href="/user/campaign/?action=manage"><i
+												class="fa fa-angle-double-right"></i> <span>Manage Campaign</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class=""><a href="/user/senderId/?action=manage"><i class="fa fa-file-text"></i>
+									<span>Sender ID</span></a></li>
+							<li class=""><a href="/user/template/?action=manage"><i class="fa fa-file-text"></i>
+									<span>Message Templates</span></a></li>
+							<li class="treeview"><a href="#"><i class="fa fa-files-o"></i> <span>SMS Reports</span><span
+										class="pull-right-container"><i
+											class="fa fa-angle-left pull-right"></i></span></a>
+								<ul class="treeview-menu">
+									<li class=""><a href="/user/deliverySMSSummary/?action=manage"><i
+												class="fa fa-angle-double-right"></i> <span>Delivery Summary</span></a>
+									</li>
+									<li class=""><a href="/user/deliverySMSReport/?action=manage"><i
+												class="fa fa-angle-double-right"></i> <span>Delivery Report</span></a>
+									</li>
+									<li class=""><a href="/user/fileSMSUploadManage/?action=manage"><i
+												class="fa fa-angle-double-right"></i> <span>Uploaded Files</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="treeview"><a href="#"><i class="fa fa-google"></i> <span>Google Verified
+										SMS</span><span class="pull-right-container"><i
+											class="fa fa-angle-left pull-right"></i></span></a>
+								<ul class="treeview-menu">
+									<li class=""><a href="/user/feature/?featureName=gvsms&fpage=logs&action=manage"><i
+												class="fa fa-angle-double-right"></i> <span>User VSMS Logs</span></a>
+									</li>
+									<li class=""><a
+											href="/user/feature/?featureName=gvsms&fpage=summary&action=manage"><i
+												class="fa fa-angle-double-right"></i> <span>User VSMS Summary</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class=""><a href="/user/drafts/?action=manage"><i class="fa fa-angle-double-right"></i>
+									<span>Message Drafts</span></a></li>
+							<li class=""><a href="/user/smppDetails/"><i class="fa fa-angle-double-right"></i>
+									<span>SMPP Details</span></a></li>
+							<li class="treeview"><a href="#"><i class="fa fa-plug"></i> <span>SMS API</span><span
+										class="pull-right-container"><i
+											class="fa fa-angle-left pull-right"></i></span></a>
+								<ul class="treeview-menu">
+									<li class=""><a href="/user/buildSMSApi/"><i class="fa fa-angle-double-right"></i>
+											<span>Build API (GET)</span></a>
+									</li>
+									<li class=""><a href="/user/buildSMSApi/?action=sampleCode"><i
+												class="fa fa-angle-double-right"></i> <span>SMS Sample Code</span></a>
+									</li>
+									<li class=""><a href="/user/general/?action=postmanCollection"><i
+												class="fa fa-angle-double-right"></i> <span>Postman
+												Collection</span></a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class=""><a href="/user/smartLink/?action=manage"><i class="fa fas fa-link"></i> <span>Smart
+								Link Manager</span></a></li>
+					<li class="treeview"><a href="#"><i class="fa fa-address-book"></i> <span>Manage Groups</span><span
+								class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+						<ul class="treeview-menu">
+							<li class=""><a href="/user/group/?action=manage"><i class="fa fa-angle-double-right"></i>
+									<span>Groups</span></a></li>
+							<li class=""><a href="/user/contact/?action=manage"><i class="fa fa-angle-double-right"></i>
+									<span>Contacts</span></a></li>
+						</ul>
+					</li>
+					<li class="treeview"><a href="#"><i class="fa fa-info-circle"></i> <span>Info Centre</span><span
+								class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+						<ul class="treeview-menu">
+							<li class=""><a href="/user/info/?action=loadAll"><i class="fa fa-angle-double-right"></i>
+									<span>Load All</span></a></li>
+						</ul>
+					</li>
+					<li class="treeview"><a href="#"><i class="fa fa-magic"></i> <span>Extra</span><span
+								class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+						<ul class="treeview-menu">
+							<li class=""><a href="/user/check_dnd/"><i class="fa fa-angle-double-right"></i> <span>Check
+										DND</span></a></li>
+							<li class=""><a href="/user/generate_mobile/"><i class="fa fa-angle-double-right"></i>
+									<span>Generate Mobile Nos.</span></a></li>
+							<li class=""><a href="/user/remove_duplicate/"><i class="fa fa-angle-double-right"></i>
+									<span>Remove Duplicates</span></a></li>
+							<li class=""><a href="/user/smsLengthCalculator/"><i class="fa fa-angle-double-right"></i>
+									<span>SMS Length Calculator</span></a>
+							</li>
+							<li class=""><a href="/user/downloads/?action=manage"><i
+										class="fa fa-angle-double-right"></i> <span>Downloads</span></a></li>
+							<li class=""><a href="/user/helper/?action=manage"><i class="fa fa-angle-double-right"></i>
+									<span>Enocder/Decoder</span></a></li>
+						</ul>
+					</li>
+					<li class=""><a href="/user/support/"><i class="fa fa-life-bouy"></i>
+							<span>Support</span></a></li>
+					<li class=""><a href="/user/webhook/?action=manage"><i class="fa fa-link"></i>
+							<span>Webhook</span></a></li>
+
+				</ul>
+			</section>
+		</aside>
+
+		<div class="content-wrapper">
+			{% block content %}
+			<section class="content-header">
+				<h1>
+					Dashboard
+				</h1>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="{ % url 'dashboard' %}">Dashboard</a></li>
+				</ol>
+			</section>
+
+			<section class="content">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="box card box-black">
+							<div class="box-header card-header with-border bg-black">
+								<h3 class="box-title card-title">User Dashboard</h3>
+							</div>
+							<div class="box-body card-body">
+								<div class="row">
+									<div class="col-md-12">
+									</div>
+								</div>
+								<div class="row" style="background-color:#ecf0f5">
+									<div class="col-md-3 col-sm-6 col-xs-12">
+										<div class="info-box">
+											<span class="info-box-icon bg-aqua"><i class="fa fa-credit-card"></i></span>
+
+											<div class="info-box-content">
+												<span class="info-box-text">Credit Type</span>
+												<span class="info-box-number firstBoxCount">Wallet</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6 col-xs-12">
+										<div class="info-box">
+											<span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+
+											<div class="info-box-content">
+												<span class="info-box-text">Balance</span>
+												<span style="display:inline"><span class="info-box-number creditBalance"
+														style="display:inline !important"></span></span>
+												<span class="info-box-number creditBalance"
+													style="display:inline !important">INR 0.0000</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6 col-xs-12">
+										<div class="info-box">
+											<span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+											<div class="info-box-content">
+												<span class="info-box-text">Last Purchase</span>
+												<span style="display:inline"><span class="info-box-number lastPurchase"
+														style="display:inline !important"></span></span>
+												<span class="info-box-number creditBalance"
+													style="display:inline !important">INR 0.0000</span>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3 col-sm-6 col-xs-12">
+										<div class="info-box">
+											<span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+
+											<div class="info-box-content">
+												<span class="info-box-text">Groups</span>
+												<span class="info-box-number totalGroups">0</span>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 col-md-12">
+						<div class="box" style="min-height: 570px !important;">
+							<div class="box-body">
+								<h5 class="box-title">SMS Statistics</h5>
+								<div id="morris-donut-chart" class="ecomm-donute" style="height: 317px;"></div>
+								<ul class="list-inline m-t-30 text-center">
+									<div class="row">
+										<div class="col-md-6">
+											<li class="p-r-20">
+												<h5 class="text-muted"><i class="fa fa-circle"
+														style="color: #01c0c8;"></i> Delivered</h5>
+												<h4 class="m-b-0 deliveredCls"></h4>
+											</li>
+										</div>
+										<div class="col-md-6">
+											<li class="p-r-20">
+												<h5 class="text-muted"><i class="fa fa-circle"
+														style="color: #DE1F95;"></i> Failed</h5>
+												<h4 class="m-b-0 failedCls"></h4>
+											</li>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<li class="p-r-20">
+												<h5 class="text-muted"><i class="fa fa-circle"
+														style="color: #0B62A4;"></i> Pending</h5>
+												<h4 class="m-b-0 pendingCls"></h4>
+											</li>
+										</div>
+										<div class="col-md-6">
+											<li class="p-r-20">
+												<h5 class="text-muted"><i class="fa fa-circle"
+														style="color: #4f5467;"></i> Rejected</h5>
+												<h4 class="m-b-0 rejectedCls"></h4>
+											</li>
+										</div>
+									</div>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-12">
+						<div class="box card" style="min-height: 570px !important;">
+							<div class="box-body card-body">
+								<div class="row">
+									<div class="pull-left col-md-6">
+										<h5 class="box-title card-title">Summary Graphical Stats</h5>
+									</div>
+									<div class="pull-right float-right margb20 col-md-6">
+										<div class="col-md-12">
+											<div class="btn-group float-right pull-right">
+												<form id="daychartfrm" name="daychartfrm" action="#daychartfrm"
+													method="post">
+													<div class="input-group input-sm">
+														<div class="input-group-addon input-group-prepend">
+															<span class="input-group-text"><i
+																	class="fa fa-calendar"></i></span>
+														</div>
+														<input type="text" id="datetimeinput" name="barCh"
+															data-auto-submit="" data-dateranges-report=""
+															class="sgcdatetime form-control"
+															value="Nov 15, 2023 - Nov 15, 2023">
+														<span class="input-group-btn">
+															<button type="submit"
+																class="btn btn-info input-sm btn-flat daterange">Go!</button>
+														</span>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="row"></div>
+								<div id="morris-bar-chart"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="box box-primary">
+							<div class="box-header with-border bg-black">
+								<h3 class="box-title">Important Updates</h3>
+							</div>
+							<div class="box-body">
+								<ul class="feeds">
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			{% endblock content %}
+		</div>
+		<footer class="main-footer">
+			<div class="row">
+				<div class="col-md-6">
+					<strong>Copyrights &copy; VIRTUOSO NETSOFT 2023 </strong> All rights reserved.
+					| <a href="=/terms/">Terms and Conditions</a> | <a href="/privacy/">Privacy Policy</a>
+				</div>
+				<div class="col-md-4">
+					<span class="version"><strong>Version</strong> 4.9</span>
+				</div>
+				<div class="col-md-2">
+					<div class="pull-right hidden-xs">
+						<div class="langsel">
+							<div class="input-group input-sm">
+								<div id="sgc_translate_element"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<p>
+					<p>
+						Address: Plot 10, Netsmartz House, Chandigarh IT Park, Chandigarh - 160101
+					<p>
+					<p>
+						Phone:+91 81460 10600
+					</p>
+					<p>
+						Email:Vnsai@virtuosonetsoft.Com
+					</p>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<aside class="control-sidebar control-sidebar-light">
+			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+				<li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-link"></i>
+						Quick Links</a></li>
+			</ul>
+			
+		</aside>
+		<div class="control-sidebar-bg"></div>
+	</div><a href="#" class="scroll-top bg-black" id="scroll-top">
+		<i class="arrow-top fa fa-arrow-up"></i>
+		<i class="arrow-bottom fa fa-arrow-up"></i>
+	</a>
+
+	<script src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/pace.min.js' %}"></script>
+	<script src="{% static 'js/raphael-min.js' %}"></script>
+	<script src="{% static 'js/morris.min.js' %}"></script>
+	<script src="{% static  'js/jquery.sparkline.min.js' %}"></script>
+	<script src="{% static 'js/moment.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/fastclick.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/adminlte.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/sgcCommonJs.js' %}"></script>
+
+	<script language="javascript"
+		src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+	<script>var isUpdateRolePermission = "false"; var isDeleteRolePermission = "false";</script>
+	<script src="{% static 'js/footable.min.js' %}"></script>
+	<script src="{% static 'js/jquery.knob.js' %}"></script>
+	<script src="{% static 'js/daterangepicker.js' %}"></script>
+	<script src="{% static 'js/jquery.easy_number_animate.min.js' %}"></script>
+	<script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+
+</html>

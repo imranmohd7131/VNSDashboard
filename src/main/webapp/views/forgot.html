@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>forget password</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<!-- Bootstrap CSS v5.2.1 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!--<link rel="stylesheet" href="views/forgotCss.css">-->
+	<style>
+		html {
+			font-size: 10px;
+			font-family: sans-serif;
+		}
+
+		.btn,
+		.btn-flat {
+			border-radius: 0;
+			border-width: 1px;
+		}
+
+		.btn-xs,
+		.btn-group-xs>.btn {
+			padding: 1px 5px;
+			font-size: 12px;
+			line-height: 1.5;
+			border-radius: 3px;
+		}
+
+		.btn-success {
+			color: #fff;
+			background-color: #5cb85c;
+			border-color: #4cae4c;
+		}
+
+		.btn-primary {
+			background-color: #3c8dbc;
+			border-color: #367fa9;
+			float: right;
+			color: #fff;
+		}
+
+		.btn-block {
+			display: block;
+			width: 100%;
+		}
+
+		.btn {
+			display: inline-block;
+			padding: 6px 12px;
+			margin-bottom: 0;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 1.42857143;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: middle;
+			-ms-touch-action: manipulation;
+			touch-action: manipulation;
+			cursor: pointer;
+			border: 1px solid transparent;
+			border-radius: 4px;
+		}
+
+		input,
+		button,
+		select,
+		textarea {
+			font-family: inherit;
+			font-size: inherit;
+			line-height: inherit;
+		}
+
+		button,
+		input,
+		optgroup,
+		select,
+		textarea {
+			margin: 0;
+			font: inherit;
+			color: inherit;
+			overflow: visible;
+			text-transform: none;
+		}
+
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-size: 14px;
+			line-height: 1.42857143;
+			background-color: #fff;
+			background: #d2d6de;
+			line-height: 1.42857143;
+		}
+
+		element.style {
+			font-size: 20px;
+		}
+
+		.text-blue {
+			color: #0073b7 !important;
+		}
+
+		.login-box-msg,
+		.register-box-msg {
+			margin: 0;
+			text-align: center;
+			padding: 0 20px 20px 20px;
+		}
+
+		.form-group {
+			margin-bottom: 15px;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		@media (max-width: 768px) {
+
+			.login-box,
+			.register-box {
+				width: 90%;
+				margin-top: 20px;
+			}
+		}
+
+		.login-box,
+		.register-box {
+			width: 360px;
+			margin: 2% auto;
+		}
+
+		.row {
+			margin-right: -15px;
+			margin-left: -15px;
+		}
+
+		div {
+			display: block;
+		}
+
+		.login-box-body,
+		.register-box-body {
+			background: #fff;
+			padding: 20px;
+			border-top: 0;
+			color: #666;
+		}
+
+		.has-feedback .form-control {
+			padding-right: 42.5px;
+		}
+
+		.form-control {
+			border-color: #d2d6de;
+			display: block;
+			width: 100%;
+			height: 34px;
+			padding: 6px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			color: #555;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		input,
+		button,
+		select,
+		textarea,
+		optgroup {
+			font-family: inherit;
+			font-size: inherit;
+			line-height: inherit;
+			font: inherit;
+			color: inherit;
+		}
+
+		input {
+			text-rendering: auto;
+			letter-spacing: normal;
+			display: inline-block;
+			text-align: start;
+			appearance: auto;
+			cursor: text;
+			padding: 1px 0px;
+			border-width: 2px;
+			border-style: inset;
+		}
+
+		.col-xs-8 {
+			width: 60%;
+			float: right;
+		}
+	</style>
+</head>
+
+<body class="hold-transition login-page" style="background-color:#d2d6de;">
+	<header>
+		<!-- place navbar here -->
+	</header>
+	<main>
+
+		<div class="login-box" style="margin:7% auto">
+			<div class="login-logo">
+				<div class="form-group text-center">
+					<a href="#">
+						<img src="/views/logo.png" style="height:1%;width:150px" alt="VNS Ai" />
+						<br />
+						<br />
+					</a>
+				</div>
+			</div>
+			<div class="login-box-body">
+				<p class="login-box-msg text-blue" style="font-size:20px"><b>Retrieve</b> Password</p>
+
+				<form id="ForgotForm" name="ForgotForm" action="#" method="post">
+					<div class="form-group has-feedback">
+						<input tabindex="1" type="text" maxlength="15" name="username" id="username"
+							class="form-control" placeholder="Your Username" required="required">
+						<span class="glyphicon glyphicon-user form-control-feedback"></span>
+					</div>
+					<div class="clearfix">
+					</div>
+
+					<div class="clearfix">
+
+					</div>
+					<div class="row">
+						<div class="col-xs-4">
+							<div class="col-xs-8 ">
+								<input type="hidden" name="SubmitForgotForm" id="SubmitForgotForm" value="1">
+								<button tabindex="2" id="progress" type="submit"
+									class="btn btn-primary btn-block btn-flat"><i class="fa fa-send"></i>
+									Submit</button>
+
+							</div>
+						</div>
+					</div>
+				</form>
+				<br><br><br><br><br>
+				<div class="row margt50">
+					<div class="col-md-12">
+						<div class="col-xs-12 col-md-5 pull-left no-padding">
+							<a class="btn btn-success btn-flat  btn-xs" href="Login.html">Take me to Login <i
+									class="fa fa-chevron-circle-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="row margt50">
+				<div class="col-md-12 text-center center">
+					<br /><br />
+					<p>
+						Address: Plot 10, Netsmartz House, Chandigarh IT Park, Chandigarh - 160101
+					<p>
+					<p>
+						Phone:+91 81460 10600
+					</p>
+					<p>
+						Email:Vnsai@virtuosonetsoft.Com
+					</p>
+				</div>
+			</div>
+		</footer>
+</body>
+
+</html>

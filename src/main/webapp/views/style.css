@@ -1,0 +1,393 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+html,body{
+    width: 100%;
+    height: 100vh;
+    /* overflow: scroll; */
+}
+
+#container header {
+    width: 100%;
+    min-height: 55px;
+    background-color: #111111;
+
+}
+#container header .nav-container nav{
+    width: 100%;
+    height: 0px;
+    display: flex;
+   
+}
+
+#container.active header {
+    width: 96%;
+    height: 0px;
+    float: right;
+    margin-right: 0;
+    position: absolute;
+    left: 4%;
+    /* right: 4%; */
+    z-index: 1;
+    background-color: #111111; 
+    /* display: flex; */
+    
+} 
+#container header .nav-container nav .list ul li i{
+
+    /* width: 25.7px; */
+    padding-right: 10px;
+    color: #ffffff;
+    font-size: 14px;
+}
+#container header .nav-container nav .list ul li i .label{
+    position: absolute;
+    top: 14.5px;
+    right: 150px;
+    text-align: center;
+    font-size: 9px;
+    padding: 2px 3px ;
+    line-height: .9;
+    font-weight: bold;
+    border-radius: 2px;
+    background-color: #dd4b39;
+}
+#container header .nav-container nav .list ul li i .label1{
+    position: absolute;
+    top: 13.5px;
+    right: 108px;
+    text-align: center;
+    font-size: 9px;
+    padding: 2px 3px ;
+    line-height: .9;
+    font-weight: bold;
+    border-radius: 2px;
+    background-color: #3c8dbc;
+}
+
+
+
+#container header .nav-container nav .list ul li .fa:hover{
+    cursor: pointer;
+	color:rgba(253, 249, 249, 0.774);
+   
+
+}
+#container header .nav-container nav .list ul li .demo1:hover
+{
+	color:rgba(253, 249, 249, 0.774);
+}
+
+
+#container header .nav-container nav .list ul a{
+    position: relative;
+    top: 0;
+   
+    right: 62.5%;
+    text-decoration: none;
+    font-size:large;
+    color: #ffffff;
+    /* z-index: 1; */
+}
+#container.active header .nav-container nav .list ul a {
+    position: relative;
+    top: 5px;
+    right: 82.4%;
+    font-size:large;
+    color: #ffffff;
+}
+
+#container header .nav-container nav .list {
+    width: 100%;
+ 
+    
+    
+}
+#container header .nav-container nav .list ul{
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: end;
+    align-items: center;
+    list-style: none;
+    font-size: 14px;
+    gap: 1.2em;
+    padding: 15px;
+    /* vertical-align:middle; */
+
+
+}
+#container header .nav-container nav .list ul li span{
+    cursor:pointer;
+ /* width: 100%; */
+}
+
+#container.active .sidebar{
+    width: 50px;
+}
+#container .sidebar{
+    /* display: block; */
+    width: 230px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50em;
+    background-color:#222D32;
+}
+#container .sidebar .logo a {
+    text-decoration: none;
+    color: #ffffff;
+    display: flex;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    background-color: #111111;
+}
+#container .sidebar .logo a span{ 
+    display: none; 
+}
+
+#container.active .sidebar .logo a span{
+    display: block;
+    width: 49px;
+    height: 50px;
+    font-size: 18.5px;
+    font-weight: 400;
+    text-transform:uppercase ;
+    align-items: center;
+    padding: 10px 0 ;
+}
+#container.active .sidebar .logo a img{
+    display: none;
+}
+
+
+
+#container .sidebar .aside-dashboard {
+   width: 100%;
+   height: 100vh;
+}
+#container .sidebar .aside-dashboard ul{
+list-style: none;
+display: flex;
+flex-direction: column;
+padding-left: 10px;
+
+
+}
+#container.active .sidebar .aside-dashboard ul{
+
+display: flex;
+width: 230px;
+
+justify-content:start;
+margin: -8px;
+
+}
+
+#container.active .sidebar .aside-dashboard ul .aside-tab{
+   margin-left:8px ;
+
+}
+#container .sidebar .aside-dashboard ul .aside-tab a {
+    display: flex;
+	height: 100%;
+    padding: 11.5px 2px;
+	text-decoration: none;
+	border-radius: 7px;
+    border: #ffffff;
+    margin-left:-10px ;
+	align-items: center;
+	justify-content: left;
+}
+
+#container .sidebar .aside-dashboard ul .aside-tab a ion-icon {
+    display: flex;
+    max-height:100px ;
+	font-size: 14px;
+	margin: 0 15px;
+
+	color:rgba(253, 249, 249, 0.774);
+    align-items: center;
+
+
+}
+#container.active .sidebar .aside-dashboard ul .aside-tab a ion-icon {
+   
+ width: 10%;
+ 
+}
+
+#container .sidebar .aside-dashboard ul .aside-tab a span{
+
+    display: block;
+	color:rgba(253, 249, 249, 0.774);
+	font-size: 14px;
+	border-radius: 7px;
+   
+}
+#container.active .sidebar .aside-dashboard ul .aside-tab a span{
+width: 80%;
+}
+
+
+
+
+#container .sidebar ul .aside-tab a:hover,
+#container .sidebar ul .aside-tab a:hover span,#container .sidebar ul .aside-tab a:hover ion-icon{
+    /* font-weight: bold; */
+    
+	color: #ffffff;
+	background: #161e22;
+}
+#container .sidebar ul .aside-tab a:hover{
+    border-left: 3px solid white;
+    border-radius: 0;
+    
+    /* overflow:hidden; */
+
+}
+
+
+
+#container .sidebar .user-panel {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    height: 65px;
+    font-size:14px;
+}
+#container .sidebar .user-panel .image img{
+    width: 40px;
+    height: 40px;
+}
+#container.active .sidebar .user-panel .image img{
+    width: 30px;
+    height: 30px;
+}
+#container .sidebar .user-panel .pull-left p{
+    
+    margin-left: 15px;
+    margin-bottom: 0rem;
+
+    /* line-height: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    */
+}
+
+#container.active .sidebar .user-panel .pull-left {
+    display: none;
+   
+}
+#container .sidebar .user-panel .pull-left a{
+    margin-left: 15px;
+    font-weight: 300;
+    text-decoration: none;
+   
+}
+
+.aside-dashboard .aside-toggle{
+	display: none;
+}
+.aside-dashboard .aside-tab .level{
+	position: relative;
+    font-size: 14px;
+    left: -2px;  
+}
+.aside-dashboard .aside-tab  label{
+    /* font-size: 14px; */
+	line-height: 24px;
+	position: relative;
+	display: block;
+	cursor: pointer;
+	
+}
+
+.aside-dashboard .aside-tab  label:after{
+  
+  content:"\f104";
+  font-family:'FontAwesome';
+  position: absolute;
+  top: 1px;
+  left: 150px;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+.aside-tab .aside-toggle:checked ~ a span label:after{
+	transform: rotate(-90deg);
+}
+
+
+.aside-dashboard .aside-tab .aside-content
+{
+	max-height: 0;
+	transform: all 0.4s;
+	overflow: hidden;
+}
+.aside-dashboard .aside-tab .aside-content .content:after{
+
+    content:"\f101";
+  font-family:'FontAwesome';
+  position: relative;
+  top: -8px;
+  /* bottom: 10px; */
+  left: -2px;
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+	/* padding: 0; */
+    /* margin-left: 0; */
+	/* line-height: 20px;
+    color: #fff; */
+}
+.aside-dashboard .aside-tab .aside-content .content:hover{
+    color: #fff;
+}
+
+.aside-dashboard .aside-tab .aside-content .content{
+    position:relative;
+    font-size: 12px;
+    padding-left: 20px;
+    line-height: 0px;
+    color:#8aa4af; 
+}
+
+
+
+.aside-dashboard .aside-toggle:checked ~ .aside-content{
+    display: block;
+    /* display: flex;
+    flex-direction: column;
+    
+    font-size: 14px;
+    color:rgba(253, 249, 249, 0.774); */
+	max-height: 100vh;
+	padding-left: 18px;
+    margin-left: -8.6px;
+    background:#2C3B41;
+}
+
+/* Add this CSS to your existing styles */
+/* .aside-dashboard .aside-toggle {
+    display: none;
+  }
+  
+  .aside-dashboard .aside-tab {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .aside-dashboard .aside-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+  }
+  
+  .aside-dashboard .aside-toggle:checked ~ .aside-content {
+    max-height: 100vh;
+    padding: 20px;
+  } */
+  

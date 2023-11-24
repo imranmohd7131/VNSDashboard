@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>VNS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<!-- Bootstrap CSS v5.2.1 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!--<link rel="stylesheet" href="LoginCss.css">-->
+	<style>
+		body {
+			background: #d2d6de;
+		}
+
+		#img {
+			height: 1%;
+			width: 150px;
+		}
+
+		.login-box {
+			width: 340px;
+			margin: 2% auto;
+		}
+
+		.login-logo {
+			margin-top: 50px;
+			font-size: 35px;
+			text-align: center;
+			margin-bottom: 25px;
+			font-weight: 300;
+		}
+
+		.txt {
+			margin-left: 13px;
+		}
+
+		.login-box-body {
+			background: #fff;
+			padding: 20px;
+			border-top: 0;
+			color: #666;
+		}
+
+		.login-box-body .form-control-feedback {
+			color: #777;
+		}
+
+		.login-box-msg {
+			margin: 0;
+			text-align: center;
+			padding: 0 20px 20px 20px;
+			font-size: 13px;
+		}
+
+		.has-feedback {
+			position: relative;
+		}
+
+		.marginTop {
+			margin-top: 40px;
+		}
+
+		.bg-olive-active {
+			background-color: #368763 !important;
+		}
+
+		.btn {
+			color: #fff !important;
+		}
+
+		.col-md-12 {
+			font-size: 13px;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="login-box">
+			<div class="login-logo">
+				<div class="form-group">
+					<a href="#">
+						<img src="/views/logo.png" id="img" alt="virtuoso netsoft">
+					</a>
+				</div>
+			</div>
+			<div class="login-box-body">
+				<p class="login-box-msg">
+					Sign in to start your session
+					<span class="txt pull-right margb20"><a class="btn bg-olive-active" href="/agentLogin"
+							title="Agents Login"><i class="fa fa-user"></i>
+							Agents Login</a></span>
+				</p>
+
+				<form id="loginForm" name="loginForm" action="update" method="post">
+					<div class="form-group has-feedback">
+						<input type="text" maxlength="15" name="username" id="username" class="form-control"
+							placeholder="Your Username">
+						<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					</div>
+					<div class="form-group has-feedback">
+						<input type="password" name="password" id="password" class="form-control"
+							placeholder="Your Password">
+						<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					</div>
+					<div class="row">
+						<div class="col-xs-4">
+							<button id="btn-progress" type="submit" class="btn btn-primary btn-flat"><i
+									class="fa fa-send"></i> Sign In</button>
+						</div>
+					</div>
+				</form>
+				<br><br>
+				<div class="row marginTop">
+					<div class="col-md-12">
+						<div class="pull-left no-padding">
+							<a href="views/forgot.html" class="btn btn-warning">I forgot my
+								password <i class="fa fa-chevron-circle-right"></i></a>
+						</div>
+						<div class="col-md-7">
+							<a href="/register" class="btn btn-flat btn-info">Register a new membership <i
+									class="fa fa-chevron-circle-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</main>
+	<footer>
+		<div class="col-md-12 text-center center">
+			<br><br>
+			<p>
+				Address: Plot 10, Netsmartz House, Chandigarh IT Park, Chandigarh - 160101</p>
+			<p>
+			</p>
+			<p>
+				Phone:+91 81460 10600
+			</p>
+			<p>
+				Email:Vnsai@virtuosonetsoft.Com
+			</p>
+		</div>
+	</footer>
+</body>
+
+</html>

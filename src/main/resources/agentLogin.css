@@ -1,0 +1,82 @@
+body {
+	background: #d2d6de;
+}
+
+a:link {
+	text-decoration: none;
+	width: 150px;
+}
+
+.login-box {
+	width: 340px;
+	margin: 2% auto;
+}
+
+.logo {
+	margin-top: 50px;
+}
+
+.logo {
+	font-size: 35px;
+	text-align: center;
+	margin-bottom: 25px;
+	font-weight: 300;
+}
+
+.login-box-body {
+	background: #fff;
+	padding: 20px;
+	border-top: 0;
+	color: #666;
+}
+
+.login-box-msg {
+
+	text-align: center;
+	padding: 0 20px 20px 20px;
+	font-size: 20px;
+	color: #0073b7;
+}
+
+.btn-forgot {
+	color: #fff;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+
+.mail {
+	position: relative;
+}
+
+.form-control-feedback {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	display: block;
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	pointer-events: none;
+}
+
+.bg-olive-active {
+	background-color: #368763 !important;
+}
+
+.btn {
+	color: #fff !important;
+}
+
+.col-md-12 {
+	font-size: 14px;
+}
+
+.col-xs-4 {
+	width: 33.33333333%;
+}
+
+.footer {
+	font-size: 12px;
+}

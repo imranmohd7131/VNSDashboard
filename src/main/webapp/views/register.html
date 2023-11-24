@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Include the Glyphicons library -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/css/intlTelInput.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>Dependent Dropdown List</title>
+    <style>
+        .card {
+            width: 400px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-img {
+            width: 150px;
+            height: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        body {
+            background: #d2d6de;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="logo-container">
+            <img src="/views/logo.png" class="logo-img" alt="Logo">
+        </div>
+        <div class="card">
+            <div class="card-header text-center">
+                <!-- Use Glyphicons class -->
+                <h3><span class="glyphicon glyphicon-user"></span> Sign Up</h3>
+            </div>
+            <br>
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+                        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <select class="form-control" id="accountType">
+                            <option>Select Account Type</option>
+                            <option value="customer">Customer</option>
+                            <option value="reseller">Reseller</option>
+                        </select>
+                        <div class="input-group-addon" onclick="toggleDropdown()">
+                            <span   class="glyphicon glyphicon-chevron-down"></span>
+                        </div>
+                    </div>
+                </div>
+            
+                <script>
+                    function toggleDropdown() {
+                        var dropdown = document.getElementById("accountType");
+                        dropdown.size = dropdown.size === 1 ? dropdown.length : 1;
+                    }
+                </script>
+            
+                
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="email" class="form-control" id="email" placeholder="Your Username">
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="email" class="form-control" id="email" placeholder="Your FullName/Company Name">
+
+                    </div>
+                </div>
+
+
+                <!-- New form groups for additional fields -->
+
+
+                <div class="form-group">
+                    <textarea tabindex="4" name="sgc_address" id="sgc_address" class="form-control"
+                        placeholder="Your Address" required=""></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-briefcase"></span></span>
+                        <input type="text" class="form-control" id="compan" placeholder="Your Company Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select country form-control" id="country" onchange="loadStates()">
+                        <option selected>Select Country</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select state form-control" id="state" onchange="loadCities()">
+                        <option selected>Select State</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <select class="form-select city form-control" id="city">
+                        <option selected>Select City</option>
+                    </select>
+                </div>
+
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-4 offset-2">
+                            <button tabindex="4" id="sgc-btn-progress" type="submit" class="btn btn-primary btn-flat">
+                                <i class="fas fa-paper-plane"></i> Sign Up
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="footer">
+                    <p>Not a member? <a href="/login">Take me to Login <i
+                                class="fa fa-chevron-circle-right"></i></a><br></p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="row margt50">
+            <div class="col-md-12 text-center center">
+                <br><br>
+                <p>
+                    Address: Plot 10, Netsmartz House, Chandigarh IT Park, Chandigarh - 160101</p>
+                <p>
+                </p>
+                <p>
+                    Phone:+91 81460 10600
+                </p>
+                <p>
+                    Email:Vnsai@virtuosonetsoft.Com
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap and IntlTelInput scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.12/js/intlTelInput.min.js"></script>
+
+    <!-- Your app.js script -->
+    <script src="views/app.js"></script>
+
+    <!--<script>
+        // Initialize the international telephone input
+        var input = document.querySelector("#phone");
+        window.int-->
